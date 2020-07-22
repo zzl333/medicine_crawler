@@ -1,0 +1,1000 @@
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-control" content="no-cache">
+	<meta http-equiv="Cache" content="no-cache">
+
+	<!-- css -->
+	<link href="https://staticd.ysbang.cn/css/bootstrap.min_ef1c2cc.css?r=20180612" rel="stylesheet" type="text/css">
+	<link href="https://staticd.ysbang.cn/css/common_004f990.css" rel="stylesheet" type="text/css">
+	<link href="https://staticd.ysbang.cn/css/head1192.css?r=201904301452" rel="stylesheet" type="text/css" id="headStyle">
+	<link href="img/favicon.ico" rel="icon" type="image/x-icon">
+	<link href="https://staticd.ysbang.cn/widget/dialog/ysbpc-dialog_461e4ad.css" rel="stylesheet" type="text/css">
+	<link href="https://staticd.ysbang.cn/widget/dialog/cart-dialog_167de65.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="https://staticd.ysbang.cn/css/modal_fdcb552.css">
+	<link rel="stylesheet" type="text/css" href="https://staticd.ysbang.cn/css/elevator_ed21c13.css">
+	<link rel="stylesheet" type="text/css" href="https://staticd.ysbang.cn/js/cartLoading/loading_7e724d5.css">
+	<link rel="stylesheet" type="text/css" href="https://staticd.ysbang.cn/components/modal-invoice/modalInvoice_bd4447e.css">
+	<link rel="stylesheet" type="text/css" href="https://staticd.ysbang.cn/components/choose-qualification/modalQualification_eba9530.css">
+	<link rel="stylesheet" type="text/css" href="https://staticd.ysbang.cn/css/components_d5af171.css">
+	<link rel="stylesheet" type="text/css" href="https://staticd.ysbang.cn/css/firstInstancePass_808e381.css">
+	<link rel="stylesheet" type="text/css" href="https://staticd.ysbang.cn/js/thirdParty/viewer/viewer.min.css">
+	<title>全局搜索页面</title>
+</head>
+<body>
+<div class="page">
+	<!-- head部分 -->
+	<div class="page-head-tips-div" hidden=""><div class="page-head-tips">您的浏览器页面缩放比例异常，请按 <span style="color: #fc894b">Ctrl+0</span> 将页面缩放比例调至100%，以达到最好的体验效果哦~
+		<img onclick="hideTips()" src="https://staticd.ysbang.cn/img/head/tipsDel_a569ca6.png"></div></div>
+	<div class="page-head-navigation-div" id="pageHeadNavigationDiv">
+		<div class="page-head-navigation">
+			<div class="page-head-navigation-user">
+				<p style="color: red; font-size: 28px; font-weight: bold;position: absolute;">　</p>
+				<p class="page-head-navigation-user-info">
+					<a class="goto-index" href="javascript:;" onclick="gotoIndex()"><img src="https://staticd.ysbang.cn/img/head/home-icon_b17c60e.png">药师帮首页</a>
+					</p><div class="user-stores">
+						<p class="current-store">爱心大药房</p>
+						<ul class="stores-list hide"></ul>
+					</div>
+					<a href="javascript:;" onclick="logout()">退出</a>
+				<p></p>
+			</div>
+			<div class="page-head-navigation-functions" id="pageHeadNavigationFunctions">
+				<span class="nav-wrapper my_ysb">
+					<a href="javascript:;" id="userInfo"><img src="https://staticd.ysbang.cn/img/common/red_point.png" class="redPoint" id="redPointImg" style="display: none;">我的药师帮<img src="https://staticd.ysbang.cn/img/head/up_icon_fea3d4e.png" class="ysb_up_icon"><img src="https://staticd.ysbang.cn/img/head/down_icon_3dad15f.png" class="ysb_down_icon"></a>
+					<div class="my_ysb_pop">
+						<!-- <div class="li my_coupon" data-href="">我的优惠券（<span class="coupon-amount"></span>）</div>
+						<div class="li ">我的白条</div> -->
+						<div class="li " data-href="alwaysAndHistory.html?type=0">常购商品</div>
+						<div class="li " data-href="alwaysAndHistory.html?type=1">浏览历史</div>
+						<div class="li " data-href="alwaysAndHistory.html?type=2">关注商家</div>
+					</div>
+					<div class="cover-line"></div>
+				</span>
+				<span class="nav-wrapper">
+					<a href="index.html#/coupon_center.html" id="couponsCenter" target="_blank">领券中心</a>
+				</span>
+				<span class="nav-wrapper">
+					<a href="javascript:;" id="myOrders">我的订单</a>
+				</span>
+				<span class="nav-wrapper">
+					<a href="javascript:;" id="myBills"><img src="https://staticd.ysbang.cn/img/head/zhangdan_f6c849c.png" class="icon">我的账单</a>
+				</span>
+				<span class="nav-wrapper" style="display: none">
+					<a href="javascript:;" id="myZdb"><img src="https://staticd.ysbang.cn/img/head/zhangdianbao_29d12f0.png" class="icon">我的掌店宝</a>
+				</span>
+				<span class="nav-wrapper" style="display: none">
+					<a href="javascript:;" id="myWebStore">我的微店</a>
+				</span>
+				<span class="nav-wrapper" style="display: none">
+					<a href="javascript:;" id="gobalBuyMall">全球购微店</a>
+				</span>
+				<span class="nav-wrapper">
+					<a href="javascript:;" id="helpCenter">帮助中心</a>
+				</span>
+				<span class="nav-wrapper prescription">
+					<a href="javascript:;" id="prescription" style="display: none;">我的处方</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="page-head1" id="page-head1" style="height: auto;">
+		<div class="page-head-search-div">
+			<div class="head">
+				<div class="search">
+					<div class="col-xs-2 nopadding logo">
+						<a id="gotoIndex"><img src="https://staticd.ysbang.cn/img/head/logo_d651753.png"></a>
+					</div>
+					<div class="searchDiv text-center">
+						<div class="search-input">
+							<div class="input-group search-input-group" id="search-input">
+								<i></i>
+								<input type="text" class="searchKey" id="searchKey" autocomplete="off" placeholder="药名/厂家/商家">
+								<span class="input-group-addon"><span id="goSearch" class="search-btn">搜索</span></span>
+								<div class="dropdown-menu searchInfo" id="searchInfo"><ul style="list-style-type: none; width: 565px; padding: 0px;">
+		
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞  初妆">正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞  初妆</a>
+		</li>
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞  枫瑶">正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞  枫瑶</a>
+		</li>
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞 玲珑">正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞 玲珑</a>
+		</li>
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞山茶">正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞山茶</a>
+		</li>
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞茉白">正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞茉白</a>
+		</li>
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="牙刷">牙刷</a>
+		</li>
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="美国香蕉宝宝BabyBanana香蕉硅胶婴儿牙胶牙刷(有把手)">美国香蕉宝宝BabyBanana香蕉硅胶婴儿牙胶牙刷(有把手)</a>
+		</li>
+		</ul></div>
+							</div>
+						</div>
+						<div class="functionDiv">
+							<ul class="function-list" id="tags">
+	
+	<li><a id="tagId1754" href="javascript:;" onclick="tagClick(1754,this)" tagdesc="" tagdetail="">买满立减</a></li>
+	
+	
+	
+	<li><a id="tagId327" href="javascript:;" onclick="tagClick(327,this)" tagdesc="满一定金额送赠品" tagdetail="">买满即送</a></li>
+	
+	
+	
+	<li><a id="tagId326" href="javascript:;" onclick="tagClick(326,this)" tagdesc="单品买满数量可享受优惠价" tagdetail="">单品买满降价</a></li>
+	
+	
+	
+	<li><a id="tagId21613" href="javascript:;" onclick="tagClick(21613,this)" tagdesc="套餐组合购买更优惠" tagdetail="">套餐组合</a></li>
+	
+	</ul>
+						</div>
+					</div>
+					<!-- 购物车图标事件 -->
+					<div class="shoppingcartTopDiv">
+						<!-- 购物车有数量就显示这个图标样式 -->
+						<img src="https://staticd.ysbang.cn/img/head/numbg_85f921f.png" style="position:absolute; top:25px; width: 20px; left:225px; z-index:2;" id="numberImg">
+						<p id="number">2</p>
+						<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" id="gotoSPcartPage"> <img src="https://staticd.ysbang.cn/img/common/shoppingcart.png"></a>
+						<div class="dropdown-menu shoppingcartTotalInfo"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="page-head-sort-div" style="border-bottom: 1px solid rgb(255, 115, 0);">
+			<div class="page-head-sort-content" style="border-bottom: 0px;">
+				<div class="page-head-sort-list">
+					<ul class="page-head-sort-ul">
+						<li class="page-head-sort-li allSort" id="allSort"><a>&lt;&lt;所有商品分类&gt;&gt;</a></li>
+						<li class="page-head-sort-li hotdruglist"><a>爆款专区</a><span>/</span></li>
+						<li class="page-head-sort-li onlineOrder active"><a>在线下单</a><span>/</span></li>
+						<li class="page-head-sort-li providers"><a>合作商家</a><span>/</span></li>
+						<li class="page-head-sort-li brands"><a>旗舰店</a><span>/</span></li>
+						<li class="page-head-sort-li myPurchaseOrder"><a>我的进货单(批量报货)</a></li>
+						<li class="page-head-sort-li intel-purchase" style="display: none"><a>一键智能报货-报价精灵</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="index-sort" hidden="hidden" style="display: none; top: 154px;">
+			<div class="index-sort-ad-bg" style="background-image: url(&quot;https://img.ysbang.cn/data/img/pharmacy/setting/2019/09/04/3_5d6f894e9fe27.png&quot;); display: none;"></div>
+			<div class="page-head-summary" style="right: 78.5px; display: none;"><div class="bg"></div><div class="inwares"><span>2708710</span>已上架商品（种）</div><div class="takepart"><span>241712</span>参与药店（间）</div></div>
+			<div class="index-sort-div">
+				<div class="index-sort-firstClass-div" style="box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 10px 3px;">
+					<ul class="index-sort-firstClass-list">
+		
+		<li id="100" data="0" value="WesternMedicine" class="WesternMedicine">西药</li>
+		
+	
+		
+		<li id="101" data="1" value="ChinesePatentDrugs" class="ChinesePatentDrugs">中成药</li>
+		
+	
+		
+		<li id="102" data="2" value="ChineseHerbalMedicine" class="ChineseHerbalMedicine">中药饮片</li>
+		
+	
+		
+		<li id="107" data="3" value="ImportedDrugs" class="ImportedDrugs">进口药品</li>
+		
+	
+		
+		<li id="105" data="4" value="MedicalEquipments" class="MedicalEquipments">医疗器械</li>
+		
+	
+		
+		<li id="104" data="5" value="BiologicalProducts" class="BiologicalProducts">生物制品</li>
+		
+	
+		
+		<li id="106" data="6" value="Non-drug" class="Non-drug">非药品</li>
+		
+	
+		
+		<li id="108" data="7" value="TaoCan" class="TaoCan">套餐</li>
+		
+	
+		
+		<li id="570" data="8" value="GlobalSale" class="GlobalSale">全球购</li>
+		
+	</ul>
+				</div>
+				<div class="white-fill-div" hidden="hidden" style="position: absolute; margin: 0px 0px 0px 220px;"></div>
+				<div class="index-sort-childClass-list" hidden="hidden" style="position: absolute; margin: 30px 0px 0px 220px;">
+				</div>
+				<div class="white-fill-div2" hidden="hidden" style="position: relative; margin: 0px;"></div>
+				<div class="index-sort-ad" hidden="hidden" style="display: none;"><div id="ad" class="carousel slide carousel-fade">
+    <!-- 轮播（Carousel）指标 -->
+    <ol class="carousel-indicators">
+        
+            
+                
+                    
+                        <li data-target="#ad" data-slide-to="0" class=""></li>
+                    
+                
+            
+                
+                    
+                        <li data-target="#ad" data-slide-to="1" class="active"></li>
+                    
+                
+            
+                
+                    
+                        <li data-target="#ad" data-slide-to="2"></li>
+                    
+                
+            
+                
+                    
+                        <li data-target="#ad" data-slide-to="3"></li>
+                    
+                
+            
+                
+                    
+                        <li data-target="#ad" data-slide-to="4"></li>
+                    
+                
+            
+        
+    </ol>
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+        
+            
+                
+                    
+                    <div class="item" data-adid="42421">
+                        
+                        <img src="https://img.ysbang.cn/data/img/pharmacy/setting/2019/09/04/3_5d6f88bc085ec.png" redirecttype="1" target="https://dian.ysbang.cn/coupon-center/coupon-platform.html?ac=63645" tagname="2019.09.05成都市等跨店98折" data-bg="https://img.ysbang.cn/data/img/pharmacy/setting/2019/09/04/3_5d6f88bc10575.png" data-index="0">
+                        
+                    </div>
+                    
+                
+                    
+                    <div class="item active" data-adid="42423">
+                        
+                        <img src="https://img.ysbang.cn/data/img/pharmacy/setting/2019/09/04/3_5d6f894e91fed.png" redirecttype="1" target="https://api.ysbang.cn/ysb/web/app/special/special-whole.html?sn=5d6f682253d21" tagname="2019.09.05成都市等跨店98折专题" data-bg="https://img.ysbang.cn/data/img/pharmacy/setting/2019/09/04/3_5d6f894e9fe27.png" data-index="1">
+                        
+                    </div>
+                    
+                
+                    
+                    <div class="item" data-adid="42478">
+                        
+                        <img src="https://img.ysbang.cn/data/img/pharmacy/setting/2019/09/04/3_5d6f887f1dcc5.png" redirecttype="1" target="https://dian.ysbang.cn/coupon-center/coupon-platform.html?ac=63661" tagname="2019.09.05成都市等跨店97折" data-bg="" data-index="2">
+                        
+                    </div>
+                    
+                
+                    
+                    <div class="item" data-adid="42480">
+                        
+                        <img src="https://img.ysbang.cn/data/img/pharmacy/setting/2019/09/04/3_5d6f8a3c98420.png" redirecttype="1" target="https://api.ysbang.cn/ysb/web/app/special/special-whole.html?sn=5d6f6ce279a7f" tagname="2019.09.05成都市等跨店97折专题" data-bg="https://img.ysbang.cn/data/img/pharmacy/setting/2019/09/04/3_5d6f8a3c9e459.png" data-index="3">
+                        
+                    </div>
+                    
+                
+                    
+                    <div class="item" data-adid="41501">
+                        
+                        <img src="https://img.ysbang.cn/data/img/pharmacy/Setting/2019/08/30/5d68f3d8c7aba.png" redirecttype="1" target="https://dian.ysbang.cn/coupon-center/coupon-platform.html?ac=62368" tagname="9月广东旗舰店99折" data-bg="https://img.ysbang.cn/data/img/pharmacy/Setting/2019/08/30/5d68f3d8d7eaf.png" data-index="4">
+                        
+                    </div>
+                    
+                
+            
+        
+    </div>
+    <!--广告顶部波浪线-->
+    <div style="background: url(https://staticd.ysbang.cn/img/common/sawtooth.png) repeat-x transparent;position: absolute;top: 0;bottom: 0;width: 100%;height: 20px;"></div>
+</div>
+</div>
+			</div>
+		</div>
+	</div>
+	<div class="page-head2" hidden="hidden" id="page-head2">
+		<div class="page-head2-div">
+			<div class="page-head2-logo-div">
+				<a id="goIndex2">
+					<img src="https://staticd.ysbang.cn/img/head/logo_head2_0e85fb1.png">
+				</a>
+			</div>
+			<ul class="page-head2-navigation-ul">
+				<li>
+					<a href="javascript:;" id="gotoIndex2">药师帮首页</a>
+				</li>
+				<li id="head2_myYsb">
+					<img src="https://staticd.ysbang.cn/img/common/red_point.png" class="redPoint2" id="redPointImg2" style="display: none;">
+					<a href="javascript:;" id="userInfo2">我的药师帮</a>
+				</li>
+				<li id="head2_cart">
+					<a href="javascript:;" id="cart">购物车
+					<span>(</span><span id="cartNum">2</span><span>)</span></a>
+				</li>
+				<li id="head2_coupon_center">
+						<a href="index.html#/coupon_center.html" id="couponsCenter" target="_blank">领券中心</a>
+				</li>
+				<li>
+					<a href="javascript:;" id="myOrders">我的订单</a>
+				</li>
+				<li>
+					<a href="javascript:;" id="myBills">我的账单</a>
+				</li>
+			</ul>
+			<a class="logout-head2" href="javascript:;" onclick="logout()">退出</a>
+			<div class="user-stores user-stores-head2">
+				<div class="current-store current-store-head2">爱心大药房</div>
+				<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+				<ul class="stores-list hide"></ul>
+			</div>
+		</div>
+
+	</div>
+	</div>
+	<!--悬浮搜索栏-->
+	<div class="search-fix" style="display: none;" id="search-fix">
+		<div class="search-m">
+			<a href="javascript:;" class="search_logo" onclick="gotoIndex()">
+				<img src="https://staticd.ysbang.cn/img/head/head-logo_350d249.png">
+			</a>
+			<div class="search-input">
+				<div class="input-group search-input-group">
+					<i></i>
+					<input type="text" class="searchKey" id="fixKey" autocomplete="off" placeholder="药名/厂家/商家">
+					<span class="input-group-addon"><span id="" class="search-btn">搜索</span></span>
+					<div class="dropdown-menu searchInfo"><ul style="list-style-type: none; width: 565px; padding: 0px;">
+		
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞  初妆">正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞  初妆</a>
+		</li>
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞  枫瑶">正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞  枫瑶</a>
+		</li>
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞 玲珑">正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞 玲珑</a>
+		</li>
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞山茶">正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞山茶</a>
+		</li>
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞茉白">正品蕉下（BANANAUNDER）BLACK系列双层小黑伞防紫外线太阳伞女遮阳伞防晒伞茉白</a>
+		</li>
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="牙刷">牙刷</a>
+		</li>
+		
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="美国香蕉宝宝BabyBanana香蕉硅胶婴儿牙胶牙刷(有把手)">美国香蕉宝宝BabyBanana香蕉硅胶婴儿牙胶牙刷(有把手)</a>
+		</li>
+		</ul></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 隐藏模态框按钮 -->
+	<button type="button" id="addCartHidden" class="btn" data-toggle="modal" data-target="#cartCommit" style="display:none"></button>
+	<button type="button" id="payHidden" class="btn" data-toggle="modal" data-target="#payCommit" data-backdrop="static" style="display:none"></button>
+	<button type="button" id="payWarnHidden" class="btn" data-toggle="modal" data-target="#payWarn" data-backdrop="static" style="display:none"></button>
+	<button type="button" id="publicExplainHidden" class="btn" data-toggle="modal" data-target="#publicExplain" data-backdrop="static" style="display:none"></button>
+	<button type="button" id="fosunPayHidden" class="btn" data-toggle="modal" data-target="#fosunPay" data-backdrop="static" style="display:none"></button>
+
+	<div class="content" id="iframeContentDiv">
+		<iframe src="drugListByKey.html?searchKey=aaa&amp;providerId=&amp;providerIdList=&amp;providerName=&amp;firstClassId=&amp;secondClassId=&amp;thirdClassId=&amp;firstClassName=&amp;secondClassName=&amp;thirdClassName=&amp;drugId=" border="0" frameborder="0" scrolling="no" height="1200px" id="pageContent" name="pageContent" style="width: 100%; height: 6416px;"></iframe>
+	</div>
+
+	<!--返回顶部按钮-->
+	<div class="goto-top-div" hidden="hidden">
+		<button class="goto-top-btn">返回顶部</button>
+	</div>
+
+	<!--楼层指示器-->
+	<div class="elevator hidden" style="display: none; right: 0px; top: 307px;">
+		<a class="item active" href="javasript:;" id="coupons">领券<br>中心</a>
+		<a class="item" href="javasript:;" id="seckill">超值<br>秒杀</a>
+		<a class="item" href="javasript:;" id="hotProduct">热门<br>热推</a>
+		<a class="item" href="javasript:;" id="alwaysBuy">常购<br>商品</a>
+		<a class="item elevator-top" href="javasript:;" id="top">
+			<img src="https://staticd.ysbang.cn/img/homePage/arrow-up-icon_b005a03.png" class="arrow-up">
+			<span>TOP</span>
+		</a>
+	</div>
+
+	<!-- 底部 -->
+	<div class="footer" id="ysb-common-footer">
+		<div class="foot-div">
+			<div class="line-1"><a href="https://api.ysbang.cn/ysb/web/app/loginCommon/agreeDoc.html" target="_blank">药师帮用户协议</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="./img/banHash/value-added-telecommunications.png" target="_blank">增值电信业务经营许可证粤B2-20191109</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="./img/banHash/yingyezhizhao.png" target="_blank">营业执照</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="./img/index/Internet-drug-information-service.jpg" target="_blank">互联网药品信息服务资格证书编号:(粤)-经营性-2016-0027</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="./img/index/Internet-drug-transaction-service.jpg" target="_blank">互联网药品交易服务资格证书：国A20160012</a><br><a href="./img/index/third-part-platform-filing.jpg" target="_blank">（粤）网械平台备字【2018】第00001号</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://beian.miit.gov.cn" target="_blank">粤ICP备12050502</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="./img/banHash/Internet-Food-Tradin.png" target="_blank">网络食品交易第三方平台备案凭证粤B2-20191109</a></div>
+			<div class="contact" style="padding-top:6px;padding-bottom:0px;">
+				<div class="" style="text-align:right;">
+					<p style="font-size: 12px;">客服热线：<span class="ysb-contact" style="font-weight: bold;">4001180958</span>&nbsp;&nbsp;|&nbsp;&nbsp;</p>
+				</div>
+				<div class="" style="text-align:left;">
+					<p style="">药师帮联系人：<span id="rName" style="">陈亮（成都）</span>  <span id="rPhone" style="font-weight: bold;">18280208021</span>&nbsp;&nbsp;|&nbsp;&nbsp;</p>
+				</div>
+				<div class="">
+				</div>
+				<div class="text-center backup" style="padding-top:0px;margin: 0px;">
+					<span>Copyright@2015-2019 药师帮dian.ysbang.cn 版权所有</span>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!--全局查看图片-->
+	<div class="global-view-image">
+		<div class="view-frame">
+			<div class="head">
+				<p>查看图片</p><i></i>
+			</div>
+			<div class="content">
+				<div class="img-div">
+					<img src="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 初审通过提醒弹窗 lpchen-->
+	<div id="first-instance-pass-box" style="display: none;">
+		<div class="first-instance-pass-box-content">
+			<div class="left-logo"><img src="https://staticd.ysbang.cn/img/index/first_pass_icon_d025f0f.png" alt=""></div>
+			<div class="right-content">
+				<div class="title">您的相关资质已初审通过!</div>
+				<div class="text">您现在可以浏览商品，也可选择商品提交采购意向，我们将在一个工作日内完成对您资质的终审，终审通过后采购意向将正式生效。</div>
+				<div class="button">我知道了</div>
+			</div>
+			<div class="top-logo"><img src="https://staticd.ysbang.cn/img/index/congratulate_e496e44.png" alt=""></div>
+		</div>
+		<div class="base-modal"></div>
+	</div>
+
+<form action="" style="display: none;" id="webAliPayForm" method="post" target="_blank">
+	<input type="text" name="authcode" id="authcode" value="123456">
+	<input type="text" name="t" id="t" value="">
+</form>
+<form action="" style="display: none;" id="webJdPayForm" method="post" target="_blank">
+	<input type="text" name="authcode" id="authcode" value="123456">
+	<input type="text" name="usertoken" id="usertoken" value="">
+	<input type="text" name="payType" id="payType" value="">
+	<input type="text" name="orderId" id="orderId" value="">
+	<input type="text" name="businessType" id="businessType" value="">
+</form>
+<form action="" style="display: none;" id="webJdRePayForm" method="post">
+	<input type="text" name="authcode" id="authcode" value="123456">
+	<input type="text" name="payType" id="payType" value="">
+	<input type="text" name="businessType" id="businessType" value="">
+	<input type="text" name="drugstoreBranchId" id="drugstoreBranchId" value="">
+	<input type="text" name="providerId" id="providerId" value="">
+	<input type="text" name="orderId" id="orderId" value="">
+	<input type="text" name="price" id="price" value="">
+</form>
+<form action="" style="display: none;" id="webJdRechargeForm" method="post" target="_blank">
+	<input type="text" name="authcode" id="authcode" value="123456">
+	<input type="text" name="payType" id="payType" value="">
+	<input type="text" name="businessType" id="businessType" value="">
+	<input type="text" name="orderId" id="orderId" value="">
+</form>
+
+<!--  加入购物车信息  -->
+<div class="modal" id="cartCommit">
+	<div class="modal-content" id="tipbox">
+		<!-- 提示内容 -->
+		<div class="col-xs-12 add-success text-center">
+
+		</div>
+		<!-- 按钮 -->
+		<div class="box-btn">
+			<div class="col-xs-6">
+				<button class="btn" data-dismiss="modal"><img src="https://staticd.ysbang.cn/img/info/goon_f8306af.png"></button>
+			</div>
+			<div class="col-xs-6" onclick="gotoSpcart();">
+				<button class="btn"><a href="javascript:;"><img src="https://staticd.ysbang.cn/img/info/balance_e3ea4ee.png"></a></button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 我的订单提示  -->
+<div class="mask" id="mask">
+		<div class="prompt cancleorder-prompt" id="cancleorder">
+				<div class="prompt-wrap">
+					<div class="title-wrap">
+						温馨提示
+					</div>
+					<div class="prompt-content-wrap">
+							<span>你确定要取消订单吗？</span>
+						</div>
+					<div class="btns-wrap">
+						<a href="javascript:;" class="prompt-btn2 prompt-close">关闭</a>
+						<a href="javascript:;" class="prompt-btn1 confirm">确定</a>
+					</div>
+				</div>
+			</div>
+		<!-- annotated by cc 2018/4/25  -->
+	<!-- <div class="prompt recivedpackage-prompt" id="recivedpackage">
+		<div class="prompt-wrap">
+			<div class="title-wrap">
+				<span class="title">我已收到货，确认收货</span>
+			</div>
+			<div class="btns-wrap">
+				<a href="javascript:;" class="prompt-btn1 confirm"
+				>确定</a><a href="#"
+						  class="prompt-btn2 prompt-close">关闭</a>
+			</div>
+		</div>
+	</div> -->
+	<!-- <div class="prompt addshopcar-prompt" id="addshopcar">
+		<div class="prompt-wrap">
+			<div class="title-wrap">
+				<span class="title" id="add2ShopcarTitle">1种药品已成功加入购物车！</span>
+			</div>
+			<div class="btns-wrap">
+				<a href="javascript:;" class="prompt-btn1 confirm">暂不跳转</a><a
+					href="javascript:;" class="prompt-btn2 prompt-close">进入购物车</a>
+			</div>
+		</div>
+	</div> -->
+	<div class="imgview-prompt">
+		<div class="img-view bl-img" style="display:none;">
+			<img src="https://staticd.ysbang.cn/img/gerenziliao/businesslicense_c5a66e6.jpg" alt="" class="targetimg">
+			<a href="javascript:;" class="closedialog"></a>
+		</div>
+		<div class="img-view dtl-img" style="display:none;">
+			<img src="https://staticd.ysbang.cn/img/gerenziliao/drugtradelicense_9a52b13.jpg" alt="" class="targetimg">
+			<a href="javascript:;" class="closedialog"></a>
+		</div>
+		<div class="img-view gsp-img" style="display:none;">
+			<img src="https://staticd.ysbang.cn/img/gerenziliao/GSPlicense_1bd2e8d.jpg" alt="" class="targetimg">
+			<a href="javascript:;" class="closedialog"></a>
+		</div>
+	</div>
+</div>
+<!-- 支付信息提示  -->
+<div class="modal" id="payCommit">
+	<div class="modal-content" id="tipbox1" style="height:400px;width:600px;padding:0px;top:0px;">
+		<div class="modal-header" style="background:#E3D6CF;height:40px;padding:8px 0px 0px 20px;">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="padding-right:10px;">
+				×
+			</button>
+			<h4 class="modal-title" style="font-size:16px;color:#000">
+				登录上银行支付
+			</h4>
+		</div>
+		<!-- 提示内容 -->
+		<div class="col-xs-12 text-center" style="padding:50px;">
+			<div class="col-xs-12">
+				<p><img src="https://staticd.ysbang.cn/img/common/float_bar_ico.png" style="height:42px;width:42px;border:none;margin-right:5px;">请您在新开网上银行页面进行支付，支付完成前请不要关闭窗口</p>
+			</div>
+			<div class="col-xs-12" style="padding:30px 0px 10px 0px;font-szie:14px">
+				<div class="col-xs-5 text-right"><img src="https://staticd.ysbang.cn/img/common/right.png" style="height:19px;width:19px;margin-right:5px;">付款成功</div>
+				<div class="col-xs-7 text-left">您可以：<a href="#" style="color:#FB6615;" id="orderInfo">查看订单详情</a></div>
+			</div>
+			<div class="col-xs-12" style="padding:10px 0px 10px 0px;font-szie:14px">
+				<div class="col-xs-5  text-right"><img src="https://staticd.ysbang.cn/img/common/wrong.png" style="height:19px;width:19px;margin-right:5px;">付款失败</div>
+				<div class="col-xs-7  text-left">您可以：<a href="javascript:;" data-dismiss="modal" style="color:#FB6615;">选择其他支付方式</a></div>
+			</div>
+			<div class="col-xs-12 text-center">
+				<p style="font-size: 12px; color: #e01212;">选择网银支付点击无反应？请<a style="color: blue; text-decoration: underline;" href="http://jingyan.baidu.com/article/ce09321b26f3712bff858f8c.html" target="_blank">查看指引</a></p>
+			</div>
+			<div class="col-xs-12 text-left" style="padding:10px 0px 0px 5px;margin:0 auto;">
+				<div class="warn-info" style="width:486px; height:150px; border:1px solid #FB6615; background:#FEFFCC; padding:10px 0px 10px 0px; ">
+					<img src="https://staticd.ysbang.cn/img/common/pop-warn.png" width="480">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 企业网银支付提示  -->
+<div class="modal" id="payWarn">
+	<div class="modal-content" id="tipbox2" style="height:500px;width:920px;padding:0px">
+		<div class="modal-header" style="background:#FF6600;height:40px;padding:8px 0px 0px 20px;">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="padding-right:10px;color:#FFF;">
+				×
+			</button>
+			<h4 class="modal-title" style="font-size:16px;color:#FFF">
+				登录上银行支付
+			</h4>
+		</div>
+		<!-- 提示内容 -->
+		<div class="col-xs-12 text-center nopadding">
+			<img src="https://staticd.ysbang.cn/img/common/payWarn.png">
+		</div>
+		<div class="col-xs-12 text-center">
+			<a class="btn know-btn" style="border:0px;" href="javascript:;" onclick="$('#payWarn').modal('hide');$('#pageContent')[0].contentWindow.gotoPay();">我知道了</a>
+		</div>
+	</div>
+</div>
+<!-- 对公提示  -->
+<div class="modal" id="publicExplain">
+	<div class="modal-content" id="tipbox3" style="height:400px;width:600px;padding:0px">
+		<div class="modal-header" style="background:#FF6600;height:40px;padding:8px 0px 0px 20px;">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="padding-right:10px;color:#FFF;">
+				×
+			</button>
+			<h4 class="modal-title" style="font-size:16px;color:#FFF">
+				对公转账说明
+			</h4>
+		</div>
+		<!-- 提示内容 -->
+		<div class="col-xs-12 text-center nopadding">
+			<img src="https://staticd.ysbang.cn/img/common/publicExplain.png">
+		</div>
+		<div class="col-xs-12 text-center">
+			<a class="btn know-btn" style="border:0px;" href="javascript:;" onclick="gotoPublicPay();">我知道了</a>
+		</div>
+	</div>
+</div>
+<!--	复星白条提示   -->
+<div class="modal" id="fosunPay">
+	<div class="modal-content" id="tipbox4" style="height:400px;width:600px;padding:0px">
+		<div class="modal-header" style="background:#fff;height:40px;padding:8px 0px 0px 20px;">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="padding-right:10px;color:#000;">
+				×
+			</button>
+			<h4 class="modal-title" style="font-size:16px;color:#000">
+				复星白条支付
+			</h4>
+		</div>
+		<!-- 提示内容 -->
+		<div class="col-xs-12 text-center" style="padding:50px;">
+			<div class="col-xs-12">
+				<p><img src="https://staticd.ysbang.cn/img/common/float_bar_ico.png" style="height:42px;width:42px;border:none;margin-right:5px;">请您在新开复星白条支付页面进行支付，支付完成前请不要关闭窗口</p>
+			</div>
+			<div class="col-xs-12" style="padding:30px 0px 10px 0px;font-szie:14px">
+				<div class="col-xs-5 text-right"><img src="https://staticd.ysbang.cn/img/common/right.png" style="height:19px;width:19px;margin-right:5px;">付款成功</div>
+				<div class="col-xs-7 text-left">您可以：<a href="#" style="color:#FB6615;" id="orderInfo">查看订单详情</a></div>
+			</div>
+			<div class="col-xs-12" style="padding:10px 0px 10px 0px;font-szie:14px">
+				<div class="col-xs-5  text-right"><img src="https://staticd.ysbang.cn/img/common/wrong.png" style="height:19px;width:19px;margin-right:5px;">付款失败</div>
+				<div class="col-xs-7  text-left">您可以：<a href="javascript:;" data-dismiss="modal" style="color:#FB6615;">选择其他支付方式</a></div>
+			</div>
+			<div class="col-xs-12 text-center">
+				<p style="font-size: 12px; color: #e01212;"> </p>
+			</div>
+			<div class="col-xs-12 text-left" style="padding:10px 0px 0px 5px;margin:0 auto;">
+				<div class="warn-info" style="width:486px; height:150px; border:1px solid #FB6615; background:#FEFFCC; padding:10px 0px 10px 0px; ">
+					<img src="https://staticd.ysbang.cn/img/common/fosunWarn.png" width="480">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 修改收货地址弹窗 -->
+<div class="modal address-dialog index-edit-address-modal" id="edit-customer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content2">
+			<div class="modal-header">
+				<button type="button" class="close close-modal" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+				<h4 class="modal-title" id="exampleModalLabel">修改收货信息</h4>
+			</div>
+			<div class="modal-body">
+				<form id="addressModForm">
+				</form>
+				<p style="color: red;text-align: center" id="addrModMsgTip"></p>
+				<div class="sbo-bombhint">
+					<strong>温馨提示：</strong>
+					<p>GSP认证后，药店地址不可更改，如需更改请联系：&nbsp;&nbsp;&nbsp;</p>
+				</div>
+			</div>
+			<div class="modal-footer text-center">
+				<input type="submit" class="sbo-bombBtn" id="deliveryModify" value="确认修改">
+			</div>
+		</div>
+	</div>
+	<div class="modal-base"></div>
+</div>
+
+
+<!-- 更换绑定手机号-现手机验证 step1 -->
+<div class="diy-modal" id="change-binding-phone-modal" style="display: none;">
+	<div class="diy-modal-content">
+		<div class="step-1">
+			<div class="main-title"><span class="note">更换绑定手机号</span><span class="close-modal">×</span></div>
+			<div class="diy-content">
+				<div class="phone-logo"><img src="https://staticd.ysbang.cn/img/gerenziliao/phone_ico_d5c7d48.png" alt=""></div>
+				<div class="note-1">手机验证码认证</div>
+				<div class="now-phone">当前手机号 <span class="number"></span></div>
+				<div class="note-2">为了确保您的账号安全，需要先获取验证码进行手机验证</div>
+				<div class="get-verify">
+					<div class="input-box">
+						<input type="text" placeholder="请输入验证码">
+						<span class="to-get-code">获取验证码</span>
+						<div class="time-note" style="display: none;"><span class="number"></span>后重新发送</div>
+					</div>
+
+				</div>
+				<div class="submit">提交认证</div>
+			</div>
+		</div>
+
+		<div class="step-2" style="display: none;">
+			<div class="main-title"><span class="note">更换绑定手机号</span><span class="close-modal">×</span></div>
+			<div class="diy-content">
+				<div class="phone-logo"><img src="https://staticd.ysbang.cn/img/gerenziliao/phone_ico_d5c7d48.png" alt=""></div>
+				<div class="note-1">绑定新的手机号</div>
+				<div class="input-new-phone">
+					<input type="text" placeholder="请输入手机号">
+				</div>
+				<div class="get-verify">
+					<div class="input-box">
+						<input type="text" placeholder="请输入验证码">
+						<span class="to-get-code">获取验证码</span>
+						<div class="time-note" style="display: none;"><span class="number"></span>后重新发送</div>
+					</div>
+
+				</div>
+				<div class="submit">提交认证</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-base"></div>
+</div>
+
+
+<!-- 公用的图片查看弹窗-->
+<div class="diy-modal" id="image-preview-modal" style="display: none;" v-cloak="" v-show="isShowModal">
+	<div class="diy-modal-content">
+		<div class="main-title"><span class="note">查看图片</span><span class="close-modal" @click="closeModal">×</span></div>
+		<div class="diy-content">
+			<img :src="imageUrl" alt="">
+		</div>
+	</div>
+	<div class="modal-base" @click="closeModal"></div>
+</div>
+
+<!-- 白条罚息付款-微信支付 -->
+<div class="diy-modal" id="interst-wechat-payment-qrcode-modal" style="display: none;" v-cloak="" v-show="isShowModal">
+	<div class="diy-modal-content">
+		<div class="inter-pay-qr-code">
+			<i class="close" @click="closeModal"></i>
+			<div class="inter-pay-total">应付利息<span class="num">{{dstoreInterest}}</span></div>
+			<div class="store-name">{{storeName}}</div>
+			<p class="date">{{billMonth}}</p>
+			<div class="step qr-code-prepare" v-if="step == 'loading'">
+				<div class="qr-code-wrapper" ref="qrcode">
+					<img src="https://staticd.ysbang.cn/person-center/credit/business/image/fake-qrcode-loading_56caa08.gif" alt="">
+				</div>
+				<div class="logo"><i class="wx-pay-logo"></i></div>
+			</div>
+			<div class="step qr-code-prepare" v-if="step == 'ready'">
+				<div class="qr-code-wrapper"></div>
+				<div class="logo"><i class="wx-pay-logo"></i></div>
+			</div>
+			<div class="step pay-success" v-if="step == 'success'">
+				<i class="success"></i>
+				<p>本期账单利息已全部还请</p>
+			</div>
+		</div>
+	</div>
+	<div class="modal-base"></div>
+</div>
+
+
+
+
+<!-- 网商余额支付发送验证码弹窗 -->
+<div class="diy-modal" id="web-merchant-pay-send-sms-modal" style="display: none;">
+	<div class="diy-modal-content">
+		<div class="main-title">确认付款<span class="close-modal">×</span></div>
+		<div class="diy-content">
+			<div class="note-1">验证码已发送到银行卡预留手机号<span class="phone-number"></span></div>
+			<div class="input-box">
+				<input type="text" placeholder="请输入短信验证码" class="sms-code">
+				<div class="time-note"><span class="number"></span>后重新获取</div>
+				<div class="to-get-code" style="display: none;">重新获取验证码</div>
+			</div>
+			<div class="handle">
+				<div class="cancel">取消</div>
+				<div class="confirm">确定</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="modal-base"></div>
+</div>
+
+
+
+
+<!-- 通用的提醒小弹窗 -->
+<div id="toast-modal" style="display: none;">
+	<div class="item warn">
+		<i class="icon"></i><span class="text"></span>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<!-- 自动搜索补全 -->
+<script async="" src="https://cdn.jsdelivr.net/npm/sa-sdk-javascript@1.14.3/sensorsdata.min.js" charset="UTF-8"></script><script id="searchKeyShowTmpl" type="text/html">
+	<ul style="list-style-type: none; width: 565px; padding: 0px;">
+		{{each providers as provider }}
+		<li style="padding:5px 0px 5px 20px; border-bottom: 1px solid #e1e2e1;">
+			<img src="https://staticd.ysbang.cn/img/common/provider_logo.jpg" style="float:left;margin-top: 3px; margin-right: 3px;" />
+			<a class="search-a" href="index.html?v={{provider.providerId}}#/supplierstore.html?providerId={{provider.providerId}}">{{provider.name}} <span style="color: #999999;">></span></a>
+		</li>
+		{{/each}}
+		{{each keys as keyword }}
+		<li class="drug-search-item" style="padding:2px 0px 0px 20px;">
+			<a class="search-a " href="javascript:;" onclick="chooseKey(this);" value="{{keyword}}">{{keyword}}</a>
+		</li>
+		{{/each}}
+</script>
+
+<!-- 购物车model -->
+<script id="T-shoppingcartTotalInfo-haveDrug" type="text/html">
+	<div class="cartTotalInfo-haveDrug" style="" id="shoppingcartTotalInfo">
+		<div>商品种类：{{totalKind}}</div>
+		<div>商品总数：{{totalAmount}}</div>
+		<div>商品总额：<span style="color: #FB6615;">{{totalPrice}}</span></div>
+	</div>
+</script>
+
+<script id="tagsTpl" type="text/html">
+	{{each data as item}}
+	{{if item.tagId == 0}}
+	<li><a id="tagId{{item.tagId}}" class="orangeColor" href="javascript:;" onclick="tagClick({{item.tagId}},this)" tagDesc="{{item.tagDesc}}" tagDetail="{{item.tagDetail}}">{{item.tagName}}</a></li>
+	{{else}}
+	<li><a id="tagId{{item.tagId}}"  href="javascript:;" onclick="tagClick({{item.tagId}},this)" tagDesc="{{item.tagDesc}}" tagDetail="{{item.tagDetail}}">{{item.tagName}}</a></li>
+	{{/if}}
+	{{/each}}
+</script>
+
+<!--二三级分类列表模板-->
+<script id="classifyTpl" type="text/html">
+	{{each nextlevel as secondClass}}
+	<div class="index-sort-childClass-div">
+		<div class="index-sort-secondClass-div" id="{{secondClass.classify_id}}" count="{{secondClass.count}}">
+			<p>{{secondClass.classify_name}} ></p>
+		</div>
+		<div class="index-sort-thirdClass-div">
+			<div class="secondClassNum">{{secondClass.count}}</div>
+			<div class="index-sort-thirdClass-list" style="">
+				{{ each secondClass.nextlevel as thirdClass }}
+				{{if thirdClass.classify_id == activeId }}
+				<div class="index-sort-thirdClass-member active" id="{{thirdClass.classify_id}}">
+					<p>{{thirdClass.classify_name}}（{{thirdClass.count}}）</p></div>
+				{{else}}
+				<div class="index-sort-thirdClass-member" id="{{thirdClass.classify_id}}">
+					<p>{{thirdClass.classify_name}}（{{thirdClass.count}}）</p></div>
+				{{/if}}
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	{{/each}}
+</script>
+
+<!--主导航-->
+<script id="firstClassifyTpl" type="text/html">
+	{{each data as classify,i}}
+		{{if classify.classify_id == 100}}
+		<li id="100" data="{{i}}" value="WesternMedicine" class="WesternMedicine">西药</li>
+		{{else if classify.classify_id == 101}}
+		<li id="101" data="{{i}}" value="ChinesePatentDrugs" class="ChinesePatentDrugs">中成药</li>
+		{{else if classify.classify_id == 102}}
+		<li id="102" data="{{i}}" value="ChineseHerbalMedicine" class="ChineseHerbalMedicine">中药饮片</li>
+		{{else if classify.classify_id == 107}}
+		<li id="107" data="{{i}}" value="ImportedDrugs" class="ImportedDrugs">进口药品</li>
+		{{else if classify.classify_id == 105}}
+		<li id="105" data="{{i}}" value="MedicalEquipments" class="MedicalEquipments">医疗器械</li>
+		{{else if classify.classify_id == 104}}
+		<li id="104" data="{{i}}" value="BiologicalProducts" class="BiologicalProducts">生物制品</li>
+		{{else if classify.classify_id == 103}}
+		<li id="103" data="{{i}}" value="HealthFoods" class="HealthFoods">食品</li>
+		{{else if classify.classify_id == 106}}
+		<li id="106" data="{{i}}" value="Non-drug" class="Non-drug">非药品</li>
+		{{else if classify.classify_id == 570}}
+		<li id="570" data="{{i}}" value="GlobalSale" class="GlobalSale">全球购</li>
+		{{else if classify.classify_id == 108}}
+		<li id="108" data="{{i}}" value="TaoCan" class="TaoCan">套餐</li>
+		{{/if}}
+	{{/each}}
+</script>
+
+<!-- javascript -->
+<script src="https://staticd.ysbang.cn/js/thirdParty/polyfill.min.js"></script>
+<script src="https://staticd.ysbang.cn/js/thirdParty/bonree/agent.common.min.js"></script>
+<script src="https://staticd.ysbang.cn/js/respond_3fdb743.js"></script>
+<script src="https://staticd.ysbang.cn/js/thirdParty/jquery.min_4562fe2.js"></script>
+<script src="https://staticd.ysbang.cn/js/thirdParty/bootstrap.min.js"></script>
+<script src="https://staticd.ysbang.cn/js/thirdParty/qrCode/qrcode.min.js"></script>
+<script src="https://staticd.ysbang.cn/js/utils_b98a2fa.js"></script>
+<script src="https://staticd.ysbang.cn/js/sys_db89304.js"></script>
+<script src="https://staticd.ysbang.cn/js/sensors_2287cb2.js"></script>
+<script src="https://staticd.ysbang.cn/js/dian/payConstant_4a0af61.js"></script>
+<script src="https://staticd.ysbang.cn/js/statisticsTools_97f30de.js"></script>
+<script src="https://staticd.ysbang.cn/js/placeholder_74516cf.js"></script>
+<script src="https://staticd.ysbang.cn/widget/dialog/ysbpc-dialog-norequire_19ff803.js"></script>
+<script src="https://staticd.ysbang.cn/widget/dialog/ysbpc-dialog-cart_1fd7634.js"></script>
+<script src="https://staticd.ysbang.cn/js/thirdParty/template_fc44595.js"></script>
+<script src="https://staticd.ysbang.cn/js/thirdParty/viewer/viewer.js"></script>
+<script src="https://staticd.ysbang.cn/js/ysbLoading_a99305a.js"></script>
+<script src="https://staticd.ysbang.cn/js/HashRouter_270837a.js"></script>
+<script src="https://staticd.ysbang.cn/js/formula_2535cb8.js"></script>
+<script src="https://staticd.ysbang.cn/js/cartLoading/loading_cf1bcb1.js"></script>
+<script src="https://staticd.ysbang.cn/js/dian/commonFunction_df54d6e.js"></script>
+
+<script>
+	/*
+	 *   判断用户是否使用低版本浏览器：依据gulpfile中的配置
+	 *   如果用户使用IE内核，则给予提示
+	 *   如果不是IE内核，则不处理
+	 * */
+
+	(function () {
+		//IE浏览器检验
+		var browser=navigator.appName;
+		var b_version=navigator.appVersion;
+		var _bversion=b_version.split(";");
+		var trim_Version;
+
+		if(browser == "Microsoft Internet Explorer"){
+			trim_Version = parseInt(_bversion[1].replace(/\s|(MSIE)/ig,""));
+			if(!!trim_Version && trim_Version<10){
+				confirm("为了更好的为您提供服务，请更新您的浏览器到1E10以上版本，或者将您的浏览器切换到急速模式");
+				$(function () {
+					$(".page-head-navigation-div").css({
+						'border-top':'1px solid red'
+					});
+				});
+			}
+		}
+
+		//二级头部点击效果
+		$('.page-head2-navigation-ul li').click(function(e){
+			var target = $(e.currentTarget)
+			target.addClass('active').siblings().removeClass('active')
+		})
+	})();
+</script>
+
+<script src="https://staticd.ysbang.cn/js/thirdParty/vue/vue.min.js"></script>
+<script src="https://staticd.ysbang.cn/vueComponents/imagePreview_960baa9.js"></script>
+<script src="https://staticd.ysbang.cn/js/dian/elevator_e8654f8.js"></script>
+<!-- indexJs -->
+<script src="https://staticd.ysbang.cn/js/dian/indexCommon_88f7b5b.js"></script>
+<script src="https://staticd.ysbang.cn/js/dian/index_e6132af.js"></script>
+<script src="https://staticd.ysbang.cn/js/dian/modal_da51c94.js"></script>
+
+
+
+<div class="page-loading">
+    <i></i>
+    <p></p>
+</div></body></html>
